@@ -1,0 +1,16 @@
+.btnAuth{
+  padding:0 5px  ;
+  
+  border: 0 !important; 
+  color: #f77a2c;
+  font-weight: bold;
+
+}
+
+.mr-6{
+    margin-right:30px !important;
+}
+
+.h-full{
+    height: 50vh !important ;
+}
