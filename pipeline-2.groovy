@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-      //  registry = 'haythem25/khlail-2'
+        //  registry = 'haythem25/khlail-2'
         registryCredential = 'dockerhub-credentials'
         dockerImage = ''
         DOCKER_REPO = "haythem25/khlail-2"
@@ -38,31 +38,14 @@ pipeline {
             }
         }
 
-        stage('UNIT TESTS') {
-            steps {
-                echo 'Launching Unit Tests...'
-                dir('back') {
-                    sh 'mvn test'
-                }
-            }
-        }
 
-        stage('MVN SONARQUBE') {
-            steps {
-                dir('back') {
-                    withCredentials([usernamePassword(credentialsId: 'sonarqube-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        sh 'mvn sonar:sonar -Dsonar.login=$USERNAME -Dsonar.password=$PASSWORD -Dsonar.host.url=http://sonarqube:9000'
-                    }
-                }
-            }
-        }
 
         stage('BUILDING OUR IMAGES') {
             steps {
                 script {
 
                     // Build the backend image
-                    def backendImage = docker.build("${DOCKER_REPO}:backend-latest", "./back")
+                    def backendImage = docker.build("${DOCKER_REPO}:backend-latest", "./backend")
 
                     // Build the front image
                     def frontImage = docker.build("${DOCKER_REPO}:front-latest", "./front")

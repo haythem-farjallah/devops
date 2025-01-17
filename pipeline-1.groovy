@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-      //  registry = 'haythem25/khlail-2'
+        //  registry = 'haythem25/khlail-2'
         registryCredential = 'dockerhub-credentials'
         dockerImage = ''
         DOCKER_REPO = "haythem25/khlail-2"
@@ -57,45 +57,10 @@ pipeline {
             }
         }
 
-        stage('BUILDING OUR IMAGES') {
-            steps {
-                script {
 
-                    // Build the backend image
-                    def backendImage = docker.build("${DOCKER_REPO}:backend-latest", "./back")
 
-                    // Build the front image
-                    def frontImage = docker.build("${DOCKER_REPO}:front-latest", "./front")
 
-                    // Save the image IDs for the next stage
-                    env.BACKEND_IMAGE_ID = backendImage.id
-                    env.FRONT_IMAGE_ID = frontImage.id
-                }
-            }
-        }
 
-        stage('PUSH OUR IMAGES') {
-            steps {
-                script {
-                    docker.withRegistry('', registryCredential) {
-                        // Push the backend image
-                        docker.image("${DOCKER_REPO}:backend-latest").push()
-
-                        // Push the front image
-                        docker.image("${DOCKER_REPO}:front-latest").push()
-                    }
-                }
-            }
-        }
-        stage('DEPLOYS APPS') {
-            steps {
-                script {
-                    dir('devops') {
-                        sh 'docker-compose -f docker-compose.yml up -d'
-                    }
-                }
-            }
-        }
 
 
 
