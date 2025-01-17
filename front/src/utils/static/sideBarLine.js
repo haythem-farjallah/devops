@@ -9,26 +9,26 @@ export const sideAdmin = [
     icon: "bx bxl-product-hunt",
     label: "Ingredients",
   },
-  {
-    link: "/admin/meals",
-    icon: "bx bxl-product-hunt",
-    label: "Meals",
-  },
-  {
-    link: "/admin/menus",
-    icon: "bx bx-box",
-    label: "Daily Menu",
-  },
-  {
-    link: "/admin/calendars",
-    icon: "bx bx-box",
-    label: "Calendars",
-  },
-  {
-    link: "/admin/users",
-    icon: "bx bx-user",
-    label: "Utilisateurs",
-  },
+  // {
+  //   link: "/admin/meals",
+  //   icon: "bx bxl-product-hunt",
+  //   label: "Meals",
+  // },
+  // {
+  //   link: "/admin/menus",
+  //   icon: "bx bx-box",
+  //   label: "Daily Menu",
+  // },
+  // {
+  //   link: "/admin/calendars",
+  //   icon: "bx bx-box",
+  //   label: "Calendars",
+  // },
+  // {
+  //   link: "/admin/users",
+  //   icon: "bx bx-user",
+  //   label: "Utilisateurs",
+  // },
   // {
   //   link: "/admin/product",
   //   icon: "bx bxl-product-hunt",
