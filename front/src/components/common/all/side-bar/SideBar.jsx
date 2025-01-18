@@ -10,7 +10,7 @@ function SideBar({ open, setOpen }) {
       <div className={`sidebar ${open ? "open" : ""}`}>
         <div className="logo-details">
           <i className="bx bxl-c-plus-plus icon" />
-          <div className="logo_name">LOGO</div>
+          <div className="logo_name">ahmed</div>
           <i
             className={`bx ${!open ? "bx-menu" : "bx-menu-alt-right"}`}
             id="btn"

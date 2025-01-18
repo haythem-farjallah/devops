@@ -49,21 +49,24 @@ export default function NavBarAdmin() {
           as="a"
           href="#"
           variant="h6"
-          className="mr-4 cursor-pointer py-1.5 lg:ml-2">
-          Logo
+          className="mr-4 cursor-pointer py-1.5 lg:ml-2"
+        >
+          ahmed
         </Typography>
         <div className="flex space-x-4">
           <Typography
             as="li"
             variant="small"
             color="blue-gray"
-            className="flex items-center gap-x-2 p-1 font-medium">
+            className="flex items-center gap-x-2 p-1 font-medium"
+          >
             <svg
               width="16"
               height="17"
               viewBox="0 0 16 17"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -75,7 +78,8 @@ export default function NavBarAdmin() {
               to={`/${
                 user.role == "admin" ? "admin" : "e-com"
               }/profile/Profile`}
-              className="flex items-center">
+              className="flex items-center"
+            >
               compte
             </Link>
           </Typography>
@@ -88,7 +92,8 @@ export default function NavBarAdmin() {
                 return <Navigate to="/login" />;
               }}
               // variant="gradient"
-              size="sm">
+              size="sm"
+            >
               deconnecter
             </button>
           </div>
@@ -97,7 +102,8 @@ export default function NavBarAdmin() {
           variant="text"
           color="blue-gray"
           className="lg:hidden"
-          onClick={() => setOpenNav(!openNav)}>
+          onClick={() => setOpenNav(!openNav)}
+        >
           {openNav ? (
             <XMarkIcon className="h-6 w-6" strokeWidth={2} />
           ) : (
@@ -113,7 +119,8 @@ export default function NavBarAdmin() {
               return <Navigate to="/login" />;
             }}
             variant="gradient"
-            size="sm">
+            size="sm"
+          >
             logout
           </Button>
         </div>
